@@ -22,7 +22,7 @@
         }
       ],
       "UpstreamPathTemplate": "/gateway/product/{id}",
-      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+      "UpstreamHttpMethod": [ "GET","PUT", "DELETE" ]
     },
 
     {
@@ -47,7 +47,7 @@
         }
       ],
       "UpstreamPathTemplate": "/gateway/user/{id}",
-      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
     },
 
     {
@@ -72,7 +72,7 @@
         }
       ],
       "UpstreamPathTemplate": "/gateway/transactions/{id}",
-      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+      "UpstreamHttpMethod": [ "GET","PUT", "DELETE" ]
     }
 
   ]

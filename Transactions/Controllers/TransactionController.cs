@@ -19,6 +19,19 @@ namespace Transactions.Controllers
         [HttpGet]
         public async Task<List<TransactionModel>> Get() => await _transactionServices.GetAsync();
 
+        [HttpGet("{id:length(24)}")]
+        public async Task<ActionResult<TransactionModel?>> Get(string id)
+        {
+            var transaction = await _transactionServices.GetAsync(id);
+
+            if (transaction is null)
+            {
+                return NotFound();
+            }
+
+            return transaction;
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post(TransactionModel newTransaction)
         {

@@ -1,0 +1,40 @@
+<div class="container">
+
+    <br/>
+    
+    <!-- button to go back to previous page -->
+    <a href="#" class="badge badge-dark" (click)="goBack();">Go Back</a>
+
+    <br/>
+    <br/>
+
+    <h2>Edit Product</h2>
+
+    <br/>
+
+    <!-- using ng form to send all the data to addEmployee function to add the employee -->
+    <form #Form="ngForm" (ngSubmit)="editProduct(product)">
+
+        <!-- creating input fields to get the employee data to create a new employee -->
+        <div class="form-group">
+            <label for="productId">Product Id</label>
+            <input type="number" class="form-control" id="productId" placeholder="Enter Product Id" name="productId" [(ngModel)]="product.productId" disabled>
+          </div>
+        <div class="form-group">
+          <label for="productName">Product Name</label>
+          <input type="text" class="form-control" id="productName" placeholder="Enter Product Name" name="productName" [(ngModel)]="product.productName">
+        </div>
+        <div class="form-group">
+            <label for="productDescription">Product Description</label>
+            <input type="text" class="form-control" id="productDescription" placeholder="Enter Product Description" name="productDescription" [(ngModel)]="product.productDescription">
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price" placeholder="Enter Price" name="price" [(ngModel)]="product.price">
+        </div>
+
+        <!-- button to add the new employee and the submit the form -->
+        <button type="submit" class="btn btn-primary">Edit Product</button>
+    </form>
+
+</div>

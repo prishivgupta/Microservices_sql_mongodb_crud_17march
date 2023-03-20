@@ -1,0 +1,36 @@
+<div class="container">
+
+    <br/>
+    
+    <!-- button to go back to previous page -->
+    <a href="#" class="badge badge-dark" (click)="goBack();">Go Back</a>
+
+    <br/>
+    <br/>
+
+    <h2>Edit User</h2>
+
+    <br/>
+
+    <!-- using ng form to send all the data to addEmployee function to add the employee -->
+    <form #Form="ngForm" (ngSubmit)="editUser(user)">
+
+        <!-- creating input fields to get the employee data to create a new employee -->
+        <div class="form-group">
+            <label for="userId">User Id</label>
+            <input type="text" class="form-control" id="userId" placeholder="Enter Username" name="userId" [(ngModel)]="user.userId" disabled>
+          </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" [(ngModel)]="user.username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" class="form-control" id="password" placeholder="Enter Password" name="password" [(ngModel)]="user.password">
+        </div>
+
+        <!-- button to add the new employee and the submit the form -->
+        <button type="submit" class="btn btn-primary">Edit User</button>
+    </form>
+
+</div>

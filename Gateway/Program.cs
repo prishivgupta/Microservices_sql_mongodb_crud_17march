@@ -30,9 +30,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-await app.UseOcelot();
-
 app.UseCors();
+await app.UseOcelot();
 
 app.MapGet("/", () => "Hello World!");
 

@@ -1,0 +1,40 @@
+<div class="container">
+
+    <br/>
+    
+    <!-- button to go back to previous page -->
+    <a href="#" class="badge badge-dark" (click)="goBack();">Go Back</a>
+
+    <br/>
+    <br/>
+
+    <h2>Edit Transaction</h2>
+
+    <br/>
+
+    <!-- using ng form to send all the data to addEmployee function to add the employee -->
+    <form #Form="ngForm" (ngSubmit)="editTransaction(transaction)">
+
+        <!-- creating input fields to get the employee data to create a new employee -->
+        <div class="form-group">
+            <label for="transactionId">Transaction Id</label>
+            <input type="text" class="form-control" id="transactionId" placeholder="Enter Transaction Id" name="transactionId" [(ngModel)]="transaction.Id" disabled>
+          </div>
+        <div class="form-group">
+          <label for="transactionCode">Transaction Code</label>
+          <input type="text" class="form-control" id="transactionCode" placeholder="Enter Transaction Code" name="transactionCode" [(ngModel)]="transaction.TransactionCode">
+        </div>
+        <div class="form-group">
+            <label for="transactionDescription">Transaction Description</label>
+            <input type="text" class="form-control" id="transactionDescription" placeholder="Enter Transaction Description" name="transactionDescription" [(ngModel)]="transaction.TransactionDescription">
+        </div>
+        <div class="form-group">
+            <label for="transactionValue">Transaction Value</label>
+            <input type="number" class="form-control" id="transactionValue" placeholder="Enter Transaction Value" name="transactionValue" [(ngModel)]="transaction.TransactionValue">
+        </div>
+
+        <!-- button to add the new employee and the submit the form -->
+        <button type="submit" class="btn btn-primary">Edit Transaction</button>
+    </form>
+
+</div>
