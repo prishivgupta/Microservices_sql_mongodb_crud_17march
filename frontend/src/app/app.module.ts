@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,8 @@ import { EditUserComponent } from './Pages/User/edit-user/edit-user.component';
 import { TransactionsComponent } from './Pages/Transaction/transactions/transactions.component';
 import { AddTransactionComponent } from './Pages/Transaction/add-transaction/add-transaction.component';
 import { EditTransactionComponent } from './Pages/Transaction/edit-transaction/edit-transaction.component';
+import { LoginComponent } from './Pages/Login/login.component';
+import { AuthInterceptor } from './Interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { EditTransactionComponent } from './Pages/Transaction/edit-transaction/e
     EditUserComponent,
     TransactionsComponent,
     AddTransactionComponent,
-    EditTransactionComponent
+    EditTransactionComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { EditTransactionComponent } from './Pages/Transaction/edit-transaction/e
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
